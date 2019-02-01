@@ -15,7 +15,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-    // Override point for customization after application launch.
+    let VC = QuizViewController()
+    let tab = UITabBarController()
+    let searchVC = SeachViewController()
+    let createVC = CreateViewController()
+    let profileVc = ProfileViewController()
+    
+    VC.title = "Quiz"
+    VC.tabBarItem.image = UIImage.init(named: "quiz-icon")
+    searchVC.title = "Search"
+    searchVC.tabBarItem.image = UIImage.init(named: "icons8-search")
+    createVC.title = "Create your Quiz"
+    createVC.tabBarItem.image = UIImage.init(named: "create-icon")
+    profileVc.title = "Create your profile"
+    profileVc.tabBarItem.image = UIImage.init(named: "profile-unfilled")
+    
+    let controllers = [VC,searchVC, createVC, profileVc]
+    tab.viewControllers = controllers.map{UINavigationController(rootViewController: $0)}
+    window = UIWindow.init(frame: UIScreen.main.bounds)
+    window?.rootViewController = tab
+    window?.makeKeyAndVisible()
+    
     return true
   }
 
