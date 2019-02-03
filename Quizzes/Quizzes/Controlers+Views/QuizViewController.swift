@@ -26,42 +26,31 @@ class QuizViewController: UIViewController {
         self.quizView.quizCollectionView.register(QuizCell.self, forCellWithReuseIdentifier: "QuizCell")
         self.quizView.quizCollectionView.dataSource = self
         self.quizView.quizCollectionView.delegate = self
-        giveUsTheData()
 
     }
     
-    private func giveUsTheData() {
-        QuizzAPIClient.getQuizzData{ (error, data) in
-            if let error = error {
-                print("Error: \(error)")
-            }
-            if let data = data {
-                self.quizzToDisplay = data 
-            }
-        }
-}
     
 }
 
 
-extension QuizViewController :UICollectionViewDataSource, UICollectionViewDelegate {
+extension QuizViewController :UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return quizzToDisplay.count
+        return 5
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        guard let cell = collectionView.cellForItem(at: indexPath) as? QuizCell else { return }
+        //to do: Segue to detailed view controller
        
        
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = quizView.quizCollectionView.dequeueReusableCell(withReuseIdentifier: "QuizCell", for: indexPath) as? QuizCell else { return UICollectionViewCell() }
-        let quizzToSet = quizzToDisplay[indexPath.row]
-        
-        cell.label.text! = quizzToSet.quizTitle
+         guard let cell = quizView.quizCollectionView.dequeueReusableCell(withReuseIdentifier: "QuizCell", for: indexPath) as? QuizCell else { return UICollectionViewCell() }
+        return cell
+    }
     
-        return cell 
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 190, height: 300)
     }
     
     

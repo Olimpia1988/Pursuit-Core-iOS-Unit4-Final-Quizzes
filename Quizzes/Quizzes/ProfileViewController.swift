@@ -24,8 +24,7 @@ class ProfileViewController: UIViewController {
     
     }
     
-
-  @objc func setupScreen() {
+    @objc func setupScreen() {
         let alertController = UIAlertController(title: "Enter name", message: "Plese enter your name with no spaces or symbols ", preferredStyle: .alert)
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
         let submitAction = UIAlertAction(title: "Submit", style: .default)

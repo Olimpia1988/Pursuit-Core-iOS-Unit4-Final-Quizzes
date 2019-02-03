@@ -14,7 +14,7 @@ class QuizView: UIView {
     
     lazy var quizCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
-        layout.itemSize = CGSize.init(width: 50, height: 126)
+        layout.itemSize = CGSize.init(width: 175, height: 350)
         layout.scrollDirection = .vertical 
         layout.sectionInset = UIEdgeInsets.init(top: 10, left: 5, bottom: 10, right: 5
         )
@@ -38,7 +38,7 @@ class QuizView: UIView {
     
    func setupConstrains() {
     quizCollectionView.translatesAutoresizingMaskIntoConstraints = false
-    [quizCollectionView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 11), quizCollectionView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 11), quizCollectionView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -11), quizCollectionView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -11), quizCollectionView.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.5)].forEach{$0.isActive = true}
+    [quizCollectionView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 0), quizCollectionView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 0), quizCollectionView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: 0), quizCollectionView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: 0), quizCollectionView.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 1.0)].forEach{$0.isActive = true}
     }
     
 }

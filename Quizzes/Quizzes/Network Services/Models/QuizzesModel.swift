@@ -8,9 +8,7 @@
 
 import Foundation
 
-struct QuizzesModel: Codable {
-    var quizz: [Quizz]
-}
+
 
 struct Quizz: Codable {
     var id: String

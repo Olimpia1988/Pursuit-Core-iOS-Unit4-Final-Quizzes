@@ -14,20 +14,21 @@ final class QuizzAPIClient {
         
         let stringURL = "http://5c4d4c0d0de08100147c59b5.mockapi.io/api/v1/quizzes"
         
-        
         NetworkHelper.shared.performDataTask(endpointURLString: stringURL, httpMethod: "GET", httpBody: nil ) { (appError, data) in
             if let appError = appError {
                 print(appError)
             }
-            if let data = data {
+            else if let data = data {
                 do {
-                    let quizData = try JSONDecoder().decode([QuizzesModel].self, from: data)
-                    completionHandler(nil,quizData.first!.quizz )
+                    let quizzes = try JSONDecoder().decode([Quizz].self, from: data)
+                    completionHandler(nil,quizzes )
                 } catch {
                     if let appError = appError {
                     completionHandler(AppError.jsonDecodingError(appError), nil )
                     }
                 }
+            } else {
+                print("nothing.......")
             }
         }
     }
