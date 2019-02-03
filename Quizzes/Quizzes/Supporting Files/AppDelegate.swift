@@ -22,12 +22,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let profileVc = ProfileViewController()
     
     VC.title = "Quiz"
-    VC.tabBarItem.image = UIImage.init(named: "quiz-icon")
+    VC.tabBarItem.image = UIImage.init(named: "quizByOly")
     searchVC.title = "Search"
     searchVC.tabBarItem.image = UIImage.init(named: "icons8-search")
-    createVC.title = "Create your Quiz"
-    createVC.tabBarItem.image = UIImage.init(named: "create-icon")
-    profileVc.title = "Create your profile"
+    createVC.title = "Create a Quiz"
+    createVC.tabBarItem.image = UIImage.init(named: "createByOli")
+    profileVc.title = "Profile"
     profileVc.tabBarItem.image = UIImage.init(named: "profile-unfilled")
     
     let controllers = [VC,searchVC, createVC, profileVc]

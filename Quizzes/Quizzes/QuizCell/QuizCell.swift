@@ -23,8 +23,8 @@ class QuizCell: UICollectionViewCell {
     
     lazy var button: UIButton = {
         var button = UIButton()
-        button.setTitle(". . .", for: .normal)
-        button.backgroundColor = .blue
+        button.setImage(UIImage(named: "icons8-more_filled"), for: .normal)
+
         return button
     }()
     
