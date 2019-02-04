@@ -8,21 +8,35 @@
 
 import UIKit
 
+protocol SearchCellDelegate: AnyObject {
+    func settingButtonPushed(tag: Int)
+}
+
 class SearchCell: UICollectionViewCell {
+    
+    weak var delegate: SearchCellDelegate?
     
     lazy var label: UILabel = {
         var label = UILabel()
         label.textColor = #colorLiteral(red: 0.2644072175, green: 0.2628415823, blue: 0.2656146586, alpha: 1)
         label.font = UIFont(name: "arial", size: 16)
-        label.numberOfLines = 0 
+        label.numberOfLines = 0
+        label.textAlignment = .center
         return label
     }()
     
     lazy var settingButton: UIButton = {
         let settingButton = UIButton()
         settingButton.setImage(UIImage(named: "icons8-more_filled"), for: .normal)
+        settingButton.addTarget(self , action: #selector(actionSeetFunc), for: .touchUpInside)
         return settingButton
     }()
+    
+    @objc func actionSeetFunc() {
+        delegate?.settingButtonPushed(tag: settingButton.tag)
+  }
+    
+    
     
     override init(frame: CGRect) {
         super.init(frame: UIScreen.main.bounds)

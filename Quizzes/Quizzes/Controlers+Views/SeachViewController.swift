@@ -53,9 +53,13 @@ extension SeachViewController: UICollectionViewDataSource, UICollectionViewDeleg
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = searchView.searchCollectionView.dequeueReusableCell(withReuseIdentifier: "SearchCell", for: indexPath) as? SearchCell else { return UICollectionViewCell() }
-        
         let dataToSet = quizzToDisplay[indexPath.row]
         cell.label.text = dataToSet.quizTitle
+        
+        cell.settingButton.tag = indexPath.row
+        
+        cell.delegate = self
+        
         return cell
         }
     
@@ -66,5 +70,15 @@ extension SeachViewController: UICollectionViewDataSource, UICollectionViewDeleg
     
     }
     
+extension SeachViewController: SearchCellDelegate {
+    func settingButtonPushed(tag: Int) {
+        let alert = UIAlertController(title: "", message: " ", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Add", style: .default, handler: { (UIAlertAction) in
+            DataPersistence.addQuiz(quiz: self.quizzToDisplay[tag])
+        }))
+
+        }
+    }
     
+
 
