@@ -10,6 +10,8 @@ import UIKit
 
 class QuizViewController: UIViewController {
     
+
+    
     var quizzToDisplay = [NewQuiz]() {
         didSet {
             DispatchQueue.main.async {
@@ -29,20 +31,25 @@ class QuizViewController: UIViewController {
 
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        quizzToDisplay = DataPersistence.getQuiz()
+    }
+    
     
 }
 
 
 extension QuizViewController :UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return quizzToDisplay.count
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         guard let cell = collectionView.cellForItem(at: indexPath) as? QuizCell else { return }
-       // let selectedQuiz =
-//
+       
+
 
         
        
@@ -52,7 +59,9 @@ extension QuizViewController :UICollectionViewDataSource, UICollectionViewDelega
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
          guard let cell = quizView.quizCollectionView.dequeueReusableCell(withReuseIdentifier: "QuizCell", for: indexPath) as? QuizCell else { return UICollectionViewCell() }
         
-       // let dataToSet = quizzToDisplay[indexPath.row]
+        let dataToShow = quizzToDisplay[indexPath.row]
+        cell.label.text = dataToShow.quizTitle
+        
        
         return cell
     }

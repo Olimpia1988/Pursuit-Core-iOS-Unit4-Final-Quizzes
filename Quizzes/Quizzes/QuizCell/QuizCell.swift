@@ -16,7 +16,8 @@ class QuizCell: UICollectionViewCell {
         label.textAlignment = .center
         label.adjustsFontForContentSizeCategory = true
         label.sizeToFit()
-        label.font = UIFont(name: "arial", size: 24)
+        label.font = UIFont(name: "arial", size: 16)
+        label.textColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
  
         return label
     }()
@@ -40,7 +41,7 @@ class QuizCell: UICollectionViewCell {
     
     func setConstrainsUp() {
         label.translatesAutoresizingMaskIntoConstraints = false
-        [label.centerXAnchor.constraint(equalTo: centerXAnchor), label.centerYAnchor.constraint(equalTo: centerYAnchor)].forEach{$0.isActive = true }
+        [label.centerXAnchor.constraint(equalTo: centerXAnchor), label.centerYAnchor.constraint(equalTo: centerYAnchor), label.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 22), label.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -22)].forEach{$0.isActive = true }
        
         button.translatesAutoresizingMaskIntoConstraints = false
         [button.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 22),button.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -16)].forEach{ $0.isActive = true }
