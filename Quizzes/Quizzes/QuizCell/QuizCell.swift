@@ -8,7 +8,13 @@
 
 import UIKit
 
+protocol QuizCellDelegate: AnyObject{
+    func deleteCurrentObject(tag: Int)
+}
+
 class QuizCell: UICollectionViewCell {
+    
+    weak var delegate: QuizCellDelegate?
     
     lazy var label: UILabel = {
      var label = UILabel()
@@ -25,9 +31,14 @@ class QuizCell: UICollectionViewCell {
     lazy var button: UIButton = {
         var button = UIButton()
         button.setImage(UIImage(named: "icons8-more_filled"), for: .normal)
+        button.addTarget(self, action: #selector(deleteThingy), for: .touchUpInside)
 
         return button
     }()
+    
+    @objc func deleteThingy() {
+        delegate?.deleteCurrentObject(tag: button.tag)
+    }
     
     
     override init(frame: CGRect) {

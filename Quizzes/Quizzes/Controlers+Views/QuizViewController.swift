@@ -72,3 +72,18 @@ extension QuizViewController :UICollectionViewDataSource, UICollectionViewDelega
     
     
 }
+
+extension QuizViewController: QuizCellDelegate {
+    func deleteCurrentObject(tag: Int) {
+        let alert = UIAlertController(title: "Do you want to delete this quiz from favorites", message: "", preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "Delete", style: .default, handler: { (UIAlertAction) in
+            DataPersistence.deleteQuiz(atIndex: tag)
+            
+        }))
+        
+        present(alert, animated: true, completion: nil)
+    }
+    
+    
+}
