@@ -8,11 +8,18 @@
 
 import Foundation
 
-
-
-struct Quizz: Codable {
+struct NewQuiz: Codable {
+    var facts: [String]
     var id: String
     var quizTitle: String
-    var facts: [String]
 }
+
+
+
+//
+//struct Quizz: Codable {
+//    var id: String
+//    var quizTitle: String
+//    var facts: [String]
+//}
 

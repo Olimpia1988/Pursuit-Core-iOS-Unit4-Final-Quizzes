@@ -22,6 +22,7 @@
 		12C379BE22067D3800E6121C /* SearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C379BD22067D3800E6121C /* SearchCell.swift */; };
 		12C379C02206924700E6121C /* DetailedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C379BF2206924700E6121C /* DetailedViewController.swift */; };
 		12C379C22206925B00E6121C /* DetailedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C379C12206925B00E6121C /* DetailedView.swift */; };
+		12C379C4220696AE00E6121C /* DetailedCel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C379C3220696AE00E6121C /* DetailedCel.swift */; };
 		577118C12203796A00B9DD0B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577118C02203796A00B9DD0B /* AppDelegate.swift */; };
 		577118C82203796B00B9DD0B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 577118C72203796B00B9DD0B /* Assets.xcassets */; };
 		577118CB2203796B00B9DD0B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 577118C92203796B00B9DD0B /* LaunchScreen.storyboard */; };
@@ -48,6 +49,7 @@
 		12C379BD22067D3800E6121C /* SearchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCell.swift; sourceTree = "<group>"; };
 		12C379BF2206924700E6121C /* DetailedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedViewController.swift; sourceTree = "<group>"; };
 		12C379C12206925B00E6121C /* DetailedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedView.swift; sourceTree = "<group>"; };
+		12C379C3220696AE00E6121C /* DetailedCel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedCel.swift; sourceTree = "<group>"; };
 		577118BD2203796A00B9DD0B /* Quizzes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Quizzes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		577118C02203796A00B9DD0B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		577118C72203796B00B9DD0B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -124,6 +126,7 @@
 				577118D822037B4000B9DD0B /* File Manager Helpers */,
 				577118DB22037B7C00B9DD0B /* Date Utilities */,
 				12C379B62204A71B00E6121C /* QuizCell */,
+				12C379C3220696AE00E6121C /* DetailedCel.swift */,
 				12C379A022049C6700E6121C /* Controlers+Views */,
 				12C379A722049D3200E6121C /* CreateViewController.swift */,
 				12C379A922049D4100E6121C /* CreateView.swift */,
@@ -248,6 +251,7 @@
 				12C379B02204A39A00E6121C /* QuizzesModel.swift in Sources */,
 				12C379C02206924700E6121C /* DetailedViewController.swift in Sources */,
 				12C379A622049CE000E6121C /* SearchView.swift in Sources */,
+				12C379C4220696AE00E6121C /* DetailedCel.swift in Sources */,
 				12C379C22206925B00E6121C /* DetailedView.swift in Sources */,
 				577118D722037ABA00B9DD0B /* NetworkHelper.swift in Sources */,
 				12C379BE22067D3800E6121C /* SearchCell.swift in Sources */,

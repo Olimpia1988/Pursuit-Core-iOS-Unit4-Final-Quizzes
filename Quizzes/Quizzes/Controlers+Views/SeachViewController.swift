@@ -12,10 +12,10 @@ class SeachViewController: UIViewController {
     
     var searchView = SearchView()
     
-    var quizzToDisplay = [Quizz]() {
+    var quizzToDisplay = [NewQuiz]() {
         didSet {
             DispatchQueue.main.async {
-                //self.quizView.quizCollectionView.reloadData()
+            self.searchView.searchCollectionView.reloadData()
             }
         }
     }
@@ -27,6 +27,7 @@ class SeachViewController: UIViewController {
         searchView.searchCollectionView.delegate = self
         searchView.searchCollectionView.dataSource = self
         searchView.searchCollectionView.register(SearchCell.self, forCellWithReuseIdentifier: "SearchCell")
+        giveUsTheData()
 
     }
     
@@ -47,17 +48,22 @@ class SeachViewController: UIViewController {
 
 extension SeachViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 6
+        return quizzToDisplay.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = searchView.searchCollectionView.dequeueReusableCell(withReuseIdentifier: "SearchCell", for: indexPath) as? SearchCell else { return UICollectionViewCell() }
+        
+        let dataToSet = quizzToDisplay[indexPath.row]
+        cell.label.text = dataToSet.quizTitle
         return cell
         }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: 190, height: 300)
     }
+    
+    
     }
     
     

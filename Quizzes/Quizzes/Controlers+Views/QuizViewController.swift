@@ -10,7 +10,7 @@ import UIKit
 
 class QuizViewController: UIViewController {
     
-    var quizzToDisplay = [Quizz]() {
+    var quizzToDisplay = [NewQuiz]() {
         didSet {
             DispatchQueue.main.async {
                 self.quizView.quizCollectionView.reloadData()
@@ -46,6 +46,9 @@ extension QuizViewController :UICollectionViewDataSource, UICollectionViewDelega
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
          guard let cell = quizView.quizCollectionView.dequeueReusableCell(withReuseIdentifier: "QuizCell", for: indexPath) as? QuizCell else { return UICollectionViewCell() }
+        
+       // let dataToSet = quizzToDisplay[indexPath.row]
+       
         return cell
     }
     

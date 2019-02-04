@@ -11,14 +11,14 @@ import Foundation
 final class DataPersistence {
     private static let filename = "Quizz.plist"
     
-    private static var quizzData = [Quizz]()
+    private static var quizzData = [NewQuiz]()
     
-    static func getQuiz() -> [Quizz] {
+    static func getQuiz() -> [NewQuiz] {
         let path = DataPersistenceManager.filepathToDocumentsDiretory(filename: filename).path
         if FileManager.default.fileExists(atPath: path) {
             if let data = FileManager.default.contents(atPath: path) {
                 do {
-                  quizzData = try PropertyListDecoder().decode([Quizz].self, from: data)
+                  quizzData = try PropertyListDecoder().decode([NewQuiz].self, from: data)
                 } catch {
                     print("Property list encoding error: \(error)")
                 }
@@ -43,12 +43,12 @@ final class DataPersistence {
         }
     }
     
-    static func editQuiz(quiz: Quizz, atIndex index: Int)  {
+    static func editQuiz(quiz: NewQuiz, atIndex index: Int)  {
         quizzData.remove(at: index)
         quizzData.insert(quiz, at: index)
     }
     
-    static func addQuiz(quiz: Quizz) {
+    static func addQuiz(quiz: NewQuiz) {
         quizzData.append(quiz)
         saveQuizz()
     }

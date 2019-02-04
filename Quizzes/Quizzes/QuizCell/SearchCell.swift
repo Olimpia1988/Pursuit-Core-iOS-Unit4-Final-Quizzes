@@ -12,7 +12,13 @@ class SearchCell: UICollectionViewCell {
     
     lazy var label: UILabel = {
         var label = UILabel()
-        label.text = "Text goes here"
+        label.adjustsFontSizeToFitWidth = true
+        label.adjustsFontForContentSizeCategory = true
+        label.minimumScaleFactor = 14
+        label.font = UIFont(name: "arial", size: 16)
+    //label.preferredMaxLayoutWidth = self.label.preferredMaxLayoutWidth
+     // label.font = UIFont.systemFont(ofSize: 15, weight: UIFont.Weight(rawValue: 100))
+        label.sizeToFit()
         return label
     }()
     
@@ -32,7 +38,7 @@ class SearchCell: UICollectionViewCell {
     
     func setCellContrains() {
         label.translatesAutoresizingMaskIntoConstraints = false
-        [label.centerXAnchor.constraint(equalTo: safeAreaLayoutGuide.centerXAnchor), label.centerYAnchor.constraint(equalTo: safeAreaLayoutGuide.centerYAnchor)].forEach{ $0.isActive = true }
+        [label.centerXAnchor.constraint(equalTo: safeAreaLayoutGuide.centerXAnchor), label.centerYAnchor.constraint(equalTo: safeAreaLayoutGuide.centerYAnchor), label.heightAnchor.constraint(equalTo: safeAreaLayoutGuide.heightAnchor, multiplier: 0.35)].forEach{ $0.isActive = true }
         
         settingButton.translatesAutoresizingMaskIntoConstraints = false
         [settingButton.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 22),settingButton.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -16)].forEach{ $0.isActive = true }
