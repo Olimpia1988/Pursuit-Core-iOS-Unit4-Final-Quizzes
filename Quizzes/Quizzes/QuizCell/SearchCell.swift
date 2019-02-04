@@ -16,7 +16,15 @@ class SearchCell: UICollectionViewCell {
         label.adjustsFontForContentSizeCategory = true
         label.minimumScaleFactor = 14
         label.font = UIFont(name: "arial", size: 16)
-    //label.preferredMaxLayoutWidth = self.label.preferredMaxLayoutWidth
+        label.numberOfLines = 0
+        var maximumLabelSize: CGSize = CGSize(width: 280, height: 9999)
+        var expectedLabelSize: CGSize = label.sizeThatFits(maximumLabelSize)
+        // create a frame that is filled with the UILabel frame data
+        var newFrame: CGRect = label.frame
+        // resizing the frame to calculated size
+        newFrame.size.height = expectedLabelSize.height
+        // put calculated frame into UILabel frame
+        label.frame = newFrame
      // label.font = UIFont.systemFont(ofSize: 15, weight: UIFont.Weight(rawValue: 100))
         label.sizeToFit()
         return label

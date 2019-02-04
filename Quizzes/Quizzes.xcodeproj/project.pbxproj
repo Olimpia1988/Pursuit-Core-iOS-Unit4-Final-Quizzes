@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1263ED082207F0C900634911 /* CustomModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1263ED072207F0C900634911 /* CustomModel.swift */; };
 		12C3799F22049C5F00E6121C /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C3799E22049C5F00E6121C /* QuizViewController.swift */; };
 		12C379A222049CAA00E6121C /* QuizView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C379A122049CAA00E6121C /* QuizView.swift */; };
 		12C379A422049CC000E6121C /* SeachViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C379A322049CC000E6121C /* SeachViewController.swift */; };
@@ -34,6 +35,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1263ED072207F0C900634911 /* CustomModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomModel.swift; sourceTree = "<group>"; };
 		12C3799E22049C5F00E6121C /* QuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewController.swift; sourceTree = "<group>"; };
 		12C379A122049CAA00E6121C /* QuizView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizView.swift; sourceTree = "<group>"; };
 		12C379A322049CC000E6121C /* SeachViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeachViewController.swift; sourceTree = "<group>"; };
@@ -90,6 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				12C379AF2204A39A00E6121C /* QuizzesModel.swift */,
+				1263ED072207F0C900634911 /* CustomModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -256,6 +259,7 @@
 				577118D722037ABA00B9DD0B /* NetworkHelper.swift in Sources */,
 				12C379BE22067D3800E6121C /* SearchCell.swift in Sources */,
 				12C3799F22049C5F00E6121C /* QuizViewController.swift in Sources */,
+				1263ED082207F0C900634911 /* CustomModel.swift in Sources */,
 				577118C12203796A00B9DD0B /* AppDelegate.swift in Sources */,
 				12C379B52204A71300E6121C /* QuizCell.swift in Sources */,
 				577118D522037A9F00B9DD0B /* AppError.swift in Sources */,

@@ -21,7 +21,15 @@ class DetailedView: UIView {
         return cv
     }()
    
+    func setUp(quiz: NewQuiz) {
+        
+    }
     
+//    func setUp(book: SelectedBookModel) {
+//        authorLabel.text = book.titleToSet
+//        descriptionTextView.text = book.descriptionToSet
+//        bookPicture.image = book.imageToSet
+//    }
     
     override init(frame: CGRect) {
         super.init(frame: UIScreen.main.bounds)

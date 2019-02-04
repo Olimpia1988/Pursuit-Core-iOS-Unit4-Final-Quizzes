@@ -39,7 +39,17 @@ extension QuizViewController :UICollectionViewDataSource, UICollectionViewDelega
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        //to do: Segue to detailed view controller
+        
+        guard let cell = collectionView.cellForItem(at: indexPath) as? QuizCell else { return }
+        let selectedQuiz = 
+//
+//        let selectedBook = SelectedBookModel.init(imageToSet: cell.bookImage.image!, titleToSet: cell.textLabel.text!, descriptionToSet: cell.textView.text)
+//
+//
+//        let detail = DetailedViewController.init(selectedBook: selectedBook)
+//        navigationController?.pushViewController(detail, animated: true)
+//
+        
        
        
     }

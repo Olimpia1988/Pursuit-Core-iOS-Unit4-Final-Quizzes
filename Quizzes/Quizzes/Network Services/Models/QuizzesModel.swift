@@ -12,6 +12,7 @@ struct NewQuiz: Codable {
     var facts: [String]
     var id: String
     var quizTitle: String
+    
 }
 
 
