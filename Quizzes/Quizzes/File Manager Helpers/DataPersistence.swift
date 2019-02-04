@@ -46,6 +46,7 @@ final class DataPersistence {
     static func editQuiz(quiz: NewQuiz, atIndex index: Int)  {
         quizzData.remove(at: index)
         quizzData.insert(quiz, at: index)
+        saveQuizz()
     }
     
     static func addQuiz(quiz: NewQuiz) {

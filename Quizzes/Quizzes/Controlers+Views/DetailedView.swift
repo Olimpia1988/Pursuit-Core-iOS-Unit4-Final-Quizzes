@@ -25,11 +25,7 @@ class DetailedView: UIView {
         
     }
     
-//    func setUp(book: SelectedBookModel) {
-//        authorLabel.text = book.titleToSet
-//        descriptionTextView.text = book.descriptionToSet
-//        bookPicture.image = book.imageToSet
-//    }
+
     
     override init(frame: CGRect) {
         super.init(frame: UIScreen.main.bounds)
@@ -38,6 +34,7 @@ class DetailedView: UIView {
     
     func lasConstrains() {
         detailedCollectionView.translatesAutoresizingMaskIntoConstraints = false
+   
     }
     
     required init?(coder aDecoder: NSCoder) {
