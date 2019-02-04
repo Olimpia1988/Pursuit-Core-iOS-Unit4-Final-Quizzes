@@ -27,7 +27,7 @@ class SearchCell: UICollectionViewCell {
     
     lazy var settingButton: UIButton = {
         let settingButton = UIButton()
-        settingButton.setImage(UIImage(named: "icons8-more_filled"), for: .normal)
+        settingButton.setImage(UIImage(named: "icons8-plus"), for: .normal)
         settingButton.addTarget(self , action: #selector(actionSeetFunc), for: .touchUpInside)
         return settingButton
     }()

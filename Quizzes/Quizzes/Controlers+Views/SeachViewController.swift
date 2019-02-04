@@ -72,11 +72,11 @@ extension SeachViewController: UICollectionViewDataSource, UICollectionViewDeleg
     
 extension SeachViewController: SearchCellDelegate {
     func settingButtonPushed(tag: Int) {
-        let alert = UIAlertController(title: "", message: " ", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Add", style: .default, handler: { (UIAlertAction) in
+        let alert = UIAlertController(title: "Added to Favorites", message: " ", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (UIAlertAction) in
             DataPersistence.addQuiz(quiz: self.quizzToDisplay[tag])
-        }))
-
+            }))
+        present(alert, animated: true, completion: nil)
         }
     }
     

@@ -12,7 +12,7 @@ class QuizCell: UICollectionViewCell {
     
     lazy var label: UILabel = {
      var label = UILabel()
-        label.text = "Text goes here"
+        label.text = ""
         label.textAlignment = .center
         label.adjustsFontForContentSizeCategory = true
         label.sizeToFit()
