@@ -20,7 +20,7 @@ class CreateView: UIView {
     lazy var topTextView: UITextView = {
        let topTextView = UITextView()
        topTextView.text = "Enter a fact!"
-        topTextView.backgroundColor = #colorLiteral(red: 0.1019607857, green: 0.2784313858, blue: 0.400000006, alpha: 1)
+        topTextView.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
         return topTextView
     }()
     
@@ -43,10 +43,10 @@ class CreateView: UIView {
     
     func setConstrains() {
         textField.translatesAutoresizingMaskIntoConstraints = false
-        [textField.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 11), textField.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 11), textField.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -11), ].forEach{ $0.isActive = true }
+        [textField.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 11), textField.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 11), textField.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -11)].forEach{ $0.isActive = true }
         
         topTextView.translatesAutoresizingMaskIntoConstraints = false
-        [topTextView.topAnchor.constraint(equalTo: textField.bottomAnchor, constant: 11), textField.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 11), topTextView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -11), topTextView.heightAnchor.constraint(equalTo: safeAreaLayoutGuide.heightAnchor, multiplier: 0.35)].forEach{ $0.isActive = true }
+        [topTextView.topAnchor.constraint(equalTo: textField.bottomAnchor, constant: 11), textField.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 11), topTextView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -11), topTextView.heightAnchor.constraint(equalTo: safeAreaLayoutGuide.heightAnchor, multiplier: 0.35), topTextView.bottomAnchor.constraint(equalTo: buttomTextView.topAnchor, constant: -11)].forEach{ $0.isActive = true }
         
         buttomTextView.translatesAutoresizingMaskIntoConstraints = false
         [buttomTextView.topAnchor.constraint(equalTo: topTextView.bottomAnchor, constant: 11), buttomTextView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 11), buttomTextView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -11), buttomTextView.heightAnchor.constraint(equalTo: safeAreaLayoutGuide.heightAnchor, multiplier: 0.35)].forEach{ $0.isActive = true }
